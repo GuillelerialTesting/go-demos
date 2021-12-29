@@ -6,6 +6,7 @@ package main // Name of the package. Starting point to run the program
 */
 import (
 	"fmt"
+
 	"rsc.io/quote"
 )
 
@@ -62,11 +63,11 @@ func main() {
     */
 
     //Static Type Declaring
-    var  i int
+    numbers := [6]int{1, 2, 3, 4}  // position 4 (5th) and 5  (6th) filled with 0s 
     // var  c, ch byte
     // var  f, salary float32
     // var d =  42
-    fmt.Printf("x is of type %T\n", i)  // println fails here
+    fmt.Printf("x is of type %T\n", numbers)  // println fails here
 
     // Dynamic Type Declaring
     y := 42.0 
@@ -124,10 +125,63 @@ func main() {
         }
     }
 
-    // select {
-    //     case c = <- a :
-    //         fmt.Println("select clause")
-    // }
+    switch FIXED_TEXT == "Something" {
+    case true:
+        fmt.Println("Switch case  true")
+        
+    case false:
+        fmt.Println("Switch case false")
+        
+    }
 
+    /*
+    A select statement is similar to switch 
+    statement with difference that case statements refers to channel communications
 
+    TODO: What is a channel communication in Go??
+    */
+
+    /* for loop execution 
+    You can nest them
+
+    break, continue available
+
+    goto transfers control to the labaled statement
+
+    */
+    for i, x:= range numbers {
+        fmt.Printf("value of x = %d at %d\n", x,i)
+     }  
+
+    b = 15
+    a = 0
+    for a := 0; a < 10; a++ {
+        fmt.Printf("value of a: %d\n", a)
+        }
+    for a < b {
+        a++
+        fmt.Printf("value of a: %d\n", a)
+    }
+    // Using labels and goto keyword
+    a = 10
+    for a < 20 {
+        if a == 15 {
+           /* skip the iteration */
+           a = a + 1
+           goto LOOP
+        }
+        fmt.Printf("value of a: %d\n", a)
+        a++
+             
+    } 
+    fmt.Println("This is never executed")
+    LOOP: fmt.Println("Loop exits for good")
+    fmt.Println("Second message")
+
+    /*infinite loop
+     
+    for true  {
+       fmt.Printf("This loop will run forever.\n");
+    }
+    */
 }

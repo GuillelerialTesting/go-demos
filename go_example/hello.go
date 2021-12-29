@@ -184,4 +184,20 @@ func main() {
        fmt.Printf("This loop will run forever.\n");
     }
     */
+    var res = cast_to_float(15)
+    fmt.Printf("value of a: %f\n", res)
+
+    var1, var2 := swap("first", "second")
+    fmt.Println(var1, var2)
+
+    // TODO: Continue from https://www.tutorialspoint.com/go/go_functions.htm /called by reference
 }
+
+/*Casting to float64 the hard way*/
+func cast_to_float( a int) float64 {
+    return float64(1.0 * a)
+}
+
+func swap(x, y string) (string, string) {
+    return y, x
+ }
